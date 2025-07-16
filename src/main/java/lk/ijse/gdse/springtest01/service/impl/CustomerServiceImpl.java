@@ -6,6 +6,7 @@ import lk.ijse.gdse.springtest01.repository.CustomerRepository;
 import lk.ijse.gdse.springtest01.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -41,4 +42,12 @@ public class CustomerServiceImpl implements CustomerService {
     public void changePhoneNumber(String id) {
         customerRepository.updatePhoneNumber(id);
     }
+
+    @Override
+    public List<CustomerDto> searchAddress(String keyword) {
+        List<Customer>list = customerRepository.findCustomerBycustAddressContainingIgnoreCase(keyword);
+        return modelMapper.map(list, new TypeToken<List<CustomerDto>>(){}.getType());
+    }
+
+
 }

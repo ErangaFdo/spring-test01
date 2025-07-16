@@ -32,4 +32,9 @@ public class CustomerController {
      public void changePhoneNumber(@PathVariable ("id") String id ) {
          customerService.changePhoneNumber(id);
      }
+
+     @GetMapping("search/{keyword}")
+     public List<CustomerDto> searchAddress(@PathVariable("keyword") String keyword) {
+         return customerService.searchAddress(keyword);
+     }
 }

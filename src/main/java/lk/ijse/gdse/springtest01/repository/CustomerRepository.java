@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
@@ -14,4 +16,6 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     @Modifying
     @Transactional
     void updatePhoneNumber(String id);
+
+    List<Customer> findCustomerBycustAddressContainingIgnoreCase(String keyword);
 }

@@ -10,4 +10,5 @@ public interface CustomerService {
            void updateCustomer(CustomerDto customerDto);
            List<CustomerDto> getAllCustomer();
            void changePhoneNumber(String id);
+           List<CustomerDto> searchAddress(String keyword);
 }
