@@ -36,4 +36,9 @@ public class CustomerServiceImpl implements CustomerService {
        }
        return customerDtos;
     }
+
+    @Override
+    public void changePhoneNumber(String id) {
+        customerRepository.updatePhoneNumber(id);
+    }
 }

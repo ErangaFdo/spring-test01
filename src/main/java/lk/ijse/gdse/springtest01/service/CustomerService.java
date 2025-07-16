@@ -9,4 +9,5 @@ public interface CustomerService {
     public void saveCustomer(CustomerDto customerDto);
            void updateCustomer(CustomerDto customerDto);
            List<CustomerDto> getAllCustomer();
+           void changePhoneNumber(String id);
 }

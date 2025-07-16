@@ -27,4 +27,9 @@ public class CustomerController {
      public List<CustomerDto> getAllCustomers() {
         return customerService.getAllCustomer();
      }
+
+     @PatchMapping("phone/{id}")
+     public void changePhoneNumber(@PathVariable ("id") String id ) {
+         customerService.changePhoneNumber(id);
+     }
 }
