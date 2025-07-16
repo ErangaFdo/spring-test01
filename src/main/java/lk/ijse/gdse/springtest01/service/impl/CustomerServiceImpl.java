@@ -18,4 +18,9 @@ public class CustomerServiceImpl implements CustomerService {
     public void saveCustomer(CustomerDto customerDto) {
         customerRepository.save(modelMapper.map(customerDto, Customer.class));
     }
+
+    @Override
+    public void updateCustomer(CustomerDto customerDto) {
+        customerRepository.save(modelMapper.map(customerDto, Customer.class));
+    }
 }

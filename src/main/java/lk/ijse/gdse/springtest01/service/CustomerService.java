@@ -5,4 +5,5 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 public interface CustomerService {
     public void saveCustomer(CustomerDto customerDto);
+           void updateCustomer(CustomerDto customerDto);
 }

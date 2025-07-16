@@ -15,4 +15,9 @@ public class CustomerController {
      public void createCustomer(@RequestBody CustomerDto customerDto) {
            customerService.saveCustomer(customerDto);
      }
+
+     @PutMapping("put")
+     public void updateCustomer(@RequestBody CustomerDto customerDto) {
+          customerService.updateCustomer(customerDto);
+     }
 }
