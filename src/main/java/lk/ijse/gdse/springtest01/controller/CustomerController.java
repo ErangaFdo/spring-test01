@@ -5,6 +5,8 @@ import lk.ijse.gdse.springtest01.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/v1/cust")
 @RequiredArgsConstructor
@@ -19,5 +21,10 @@ public class CustomerController {
      @PutMapping("put")
      public void updateCustomer(@RequestBody CustomerDto customerDto) {
           customerService.updateCustomer(customerDto);
+     }
+
+     @GetMapping("get")
+     public List<CustomerDto> getAllCustomers() {
+        return customerService.getAllCustomer();
      }
 }
